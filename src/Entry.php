@@ -6,22 +6,22 @@ class Entry
     private $filename;
     private $document;
 
-    function __construct($filename)
+    function __construct(string $filename)
     {
         $this->filename = $filename;
     }
 
-    function metadata()
+    function metadata(): array
     {
         return $this->document()->getYAML();
     }
 
-    function content()
+    function content(): string
     {
         return $this->document()->getContent();
     }
 
-    private function document()
+    private function document(): \Mni\FrontYAML\Document
     {
         if(is_null($this->document)) {
             $this->document = Parser::getInstance()->parse(file_get_contents($this->filename));

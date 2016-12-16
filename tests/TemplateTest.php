@@ -10,12 +10,6 @@ class TemplateTest extends TestCase
         $this->assertInstanceOf(Soushi\Template::class, $tmpl);
     }
 
-    function testEngine()
-    {
-        $tmpl = new Soushi\Template(dirname(__FILE__).'/../templates');
-        $this->assertInstanceOf(\League\Plates\Engine::class, $tmpl->engine());
-    }
-
     function testRender()
     {
         $tmpl = new Soushi\Template(dirname(__FILE__).'/../templates');

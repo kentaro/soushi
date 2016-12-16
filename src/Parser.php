@@ -6,7 +6,7 @@ class Parser
     private static $instance;
     private $parser;
 
-    static function getInstance()
+    static function getInstance(): Parser
     {
         if (is_null(self::$instance)) {
             self::$instance = new self();
@@ -20,7 +20,7 @@ class Parser
         $this->parser = new \Mni\FrontYAML\Parser();
     }
 
-    function parse($content)
+    function parse($content): \Mni\FrontYAML\Document
     {
         return $this->parser->parse($content);
     }

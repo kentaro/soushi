@@ -6,12 +6,12 @@ class Template
     private $dirname;
     private $engine;
 
-    function __construct($dirname)
+    function __construct(string $dirname)
     {
         $this->dirname = $dirname;
     }
 
-    function engine()
+    function engine(): \League\Plates\Engine
     {
         if (is_null($this->engine)) {
             $this->engine = new \League\Plates\Engine($this->dirname);
@@ -20,7 +20,7 @@ class Template
         return $this->engine;
     }
 
-    function render($name, array $params = [])
+    function render(string $name, array $params = [])
     {
         return $this->engine()->render($name, $params);
     }
