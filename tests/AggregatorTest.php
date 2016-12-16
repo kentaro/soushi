@@ -10,13 +10,6 @@ class AggregatorTest extends TestCase
         $this->assertInstanceOf(Soushi\Aggregator::class, $aggregator);
     }
 
-    function testIterator()
-    {
-        $aggregator = new Soushi\Aggregator(dirname(__FILE__).'/assets');
-        $iter = $aggregator->iterator();
-        $this->assertEquals(iterator_count($iter), 3);
-    }
-
     function testFiles()
     {
         $aggregator = new Soushi\Aggregator(dirname(__FILE__).'/assets');
