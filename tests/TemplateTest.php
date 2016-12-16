@@ -20,7 +20,7 @@ class TemplateTest extends TestCase
     {
         $tmpl = new Soushi\Template(dirname(__FILE__).'/../templates');
         $this->assertEquals(
-            $tmpl->render('builtins/blog/index', ['title' => 'test site']),
+            $tmpl->render('builtins/index', ['title' => 'test site']),
             <<<EOS
 <title>test site</title>
 Index
