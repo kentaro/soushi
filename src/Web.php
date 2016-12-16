@@ -18,6 +18,12 @@ class Web
     function render(): string
     {
         $entry = $this->aggregator->fetch($this->path);
-        return $entry->content();
+        return $this->template->render('builtins/index', array_merge(
+                $entry->metadata(),
+                [
+                    "content" => $entry->content()
+                ]
+            )
+        );
     }
 }
