@@ -1,0 +1,23 @@
+{
+    "name": "kentaro/soushi",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kentaro Kuribayashi",
+            "email": "kentarok@gmail.com"
+        }
+    ],
+    "require": {
+        "league/plates": "^3.1",
+        "nategood/commando": "^0.2.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Soushi\\" : "src/"
+        }
+    }
+}
