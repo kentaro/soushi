@@ -1,7 +1,7 @@
 <?php
-namespace Soushi;
+namespace Soushi\File;
 
-class Entry
+class Entry implements \Soushi\File
 {
     private $filename;
     private $document;
@@ -9,6 +9,11 @@ class Entry
     function __construct(string $filename)
     {
         $this->filename = $filename;
+    }
+
+    function isEntry(): bool
+    {
+        return true;
     }
 
     function metadata(): array
@@ -24,7 +29,7 @@ class Entry
     private function document(): \Mni\FrontYAML\Document
     {
         if(is_null($this->document)) {
-            $this->document = Parser::getInstance()->parse(file_get_contents($this->filename));
+            $this->document = \Soushi\Parser::getInstance()->parse(file_get_contents($this->filename));
         }
 
         return $this->document;
