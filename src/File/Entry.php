@@ -3,12 +3,14 @@ namespace Soushi\File;
 
 class Entry implements \Soushi\File
 {
-    private $filename;
+    use Base;
+
+    private $file;
     private $document;
 
-    function __construct(string $filename)
+    function __construct(\SplFileInfo $file)
     {
-        $this->filename = $filename;
+        $this->file = $file;
     }
 
     function isEntry(): bool
@@ -29,7 +31,7 @@ class Entry implements \Soushi\File
     private function document(): \Mni\FrontYAML\Document
     {
         if(is_null($this->document)) {
-            $this->document = \Soushi\Parser::getInstance()->parse(file_get_contents($this->filename));
+            $this->document = \Soushi\Parser::getInstance()->parse(file_get_contents($this->file));
         }
 
         return $this->document;

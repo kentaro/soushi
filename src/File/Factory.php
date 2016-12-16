@@ -1,14 +1,16 @@
 <?php
+use Symfony\Component\Finder\Finder\File;
+
 namespace Soushi\File;
 
 class Factory
 {
-    static function create(string $filename): \Soushi\File
+    static function create(\SplFileInfo $file): \Soushi\File
     {
-        if (preg_match('/\.md$/', $filename)) {
-            return new Entry($filename);
+        if (preg_match('/\.md$/', $file->getPathname())) {
+            return new Entry($file);
         } else {
-            return new Asset($filename);
+            return new Asset($file);
         }
     }
 }

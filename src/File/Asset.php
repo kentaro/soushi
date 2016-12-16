@@ -3,12 +3,14 @@ namespace Soushi\File;
 
 class Asset implements \Soushi\File
 {
-    private $filename;
+    use Base;
+
+    private $file;
     private $document;
 
-    function __construct(string $filename)
+    function __construct(\SplFileInfo $file)
     {
-        $this->filename = $filename;
+        $this->file = $file;
     }
 
     function isEntry(): bool
