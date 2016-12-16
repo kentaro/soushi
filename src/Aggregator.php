@@ -28,6 +28,10 @@ class Aggregator
 
     function fetch(string $path): File
     {
+        if ($path == '') {
+            $path = 'index';
+        }
+
         foreach($this->files() as $file) {
             if ($file->path() == $path) {
                 return $file;

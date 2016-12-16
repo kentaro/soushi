@@ -1,5 +1,5 @@
 ---
-title: test entry
+title: test site
 author: kentaro
 ---
 
