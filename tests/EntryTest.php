@@ -6,7 +6,15 @@ class EntryTest extends TestCase
 {
     function testEntry()
     {
-        $entry = new Soushi\Entry(__FILE__);
-        $this->assertEquals(file_get_contents(__FILE__), $entry->content);
+        $entry = new Soushi\Entry(dirname(__FILE__).'/assets/entry.md');
+
+        $this->assertEquals($entry->metadata(), [
+            "title"  => "test entry",
+            "author" => "kentaro",
+        ]);
+        $this->assertEquals($entry->content(), <<<EOS
+<p>Hello, <strong>World</strong>.</p>
+EOS
+        );
     }
 }
