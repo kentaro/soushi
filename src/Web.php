@@ -4,21 +4,19 @@ namespace Soushi;
 
 class Web
 {
-    private $path;
     private $template;
     private $aggregator;
 
-    function __construct(string $path)
+    function __construct(Config $config)
     {
-        $this->path       = preg_replace('/^\//', '', $path);
-        $this->template   = new Template(dirname(__FILE__).'/../templates');
-        $this->aggregator = new Aggregator(dirname(__FILE__).'/../tests/assets');
+        $this->template   = new Template($config->templateDir);
+        $this->aggregator = new Aggregator($config->entryDir);
     }
 
-    function render(): string
+    function dispatch(string $path): string
     {
-        $entry = $this->aggregator->fetch($this->path);
-        return $this->template->render('builtins/index', array_merge(
+        $entry = $this->aggregator->fetch(preg_replace('/^\//', '', $path));
+        return $this->template->render('index', array_merge(
                 $entry->metadata(),
                 [
                     "content" => $entry->content()
