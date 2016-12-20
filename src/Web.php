@@ -16,7 +16,7 @@ class Web
     function dispatch(string $path): string
     {
         $entry = $this->aggregator->fetch(preg_replace('/^\//', '', $path));
-        return $this->template->render('index', array_merge(
+        return $this->template->render($entry->template(), array_merge(
                 $entry->metadata(),
                 [
                     "content" => $entry->content()

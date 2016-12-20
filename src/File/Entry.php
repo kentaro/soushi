@@ -28,6 +28,11 @@ class Entry implements \Soushi\File
         return $this->document()->getContent();
     }
 
+    function template(): string
+    {
+        return $this->metadata()["template"];
+    }
+
     private function document(): \Mni\FrontYAML\Document
     {
         if(is_null($this->document)) {

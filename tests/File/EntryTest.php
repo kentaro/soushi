@@ -20,9 +20,16 @@ class EntryTest extends TestCase
     {
         $entry = new Soushi\File\Entry(new \SplFileInfo(dirname(__FILE__).'/../assets/index.md'));
         $this->assertEquals($entry->metadata(), [
-            "title"  => "test site",
-            "author" => "kentaro",
+            "title"    => "test site",
+            "author"   => "kentaro",
+            "template" => "index",
         ]);
+    }
+
+    function testTemplate()
+    {
+        $entry = new Soushi\File\Entry(new \SplFileInfo(dirname(__FILE__).'/../assets/index.md'));
+        $this->assertEquals($entry->template(), "index");
     }
 
     function testContent()
