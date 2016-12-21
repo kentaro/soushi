@@ -1,7 +1,7 @@
 ---
 title: subdir/foo
 author: kentaro
-template: page
+template: builtins/page
 ---
 
 subdir foo

@@ -1,7 +1,7 @@
 ---
 title: subdir/bar
 author: kentaro
-template: index
+template: builtins/page
 ---
 
 subdir bar

@@ -2,6 +2,6 @@
 $this->layout('builtins/layout', ['title' => $title])
 ?>
 
-<h1>Index</h1>
+<h1><?= $title ?></h1>
 
-<?= $title ?>
+<?= $content ?>

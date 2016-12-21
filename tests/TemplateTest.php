@@ -21,6 +21,9 @@ class TemplateTest extends TestCase
             <<<EOS
 <title>test site</title>
 
+<h1>Index</h1>
+
+test site
 EOS
         );
     }
