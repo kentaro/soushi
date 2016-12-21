@@ -1,4 +1,5 @@
 <?php
+
 namespace Soushi\File;
 
 class Asset implements \Soushi\File

@@ -24,10 +24,12 @@ class Web
         }
 
         try {
-            $html = $this->template->render($page->template(), array_merge(
+            $html = $this->template->render(
+                $page->template(),
+                array_merge(
                     $page->metadata(),
                     [
-                        "content" => $page->content()
+                        "content" => $page->content(),
                     ]
                 )
             );
@@ -40,7 +42,7 @@ class Web
 
     function normalizePath(string $path): string
     {
-        return preg_replace('/^\/(index\.php\/?)?/', '', $path);
+        return preg_replace("/^\/(index\.php\/?)?/", "", $path);
     }
 
     private function handle404(Exception\PageNotFound $e)

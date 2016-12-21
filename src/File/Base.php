@@ -1,4 +1,5 @@
 <?php
+
 namespace Soushi\File;
 
 trait Base

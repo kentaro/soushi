@@ -1,4 +1,5 @@
 <?php
+
 use Symfony\Component\Finder\Finder;
 
 namespace Soushi;
@@ -28,8 +29,8 @@ class Aggregator
 
     function fetch(string $path): File
     {
-        if ($path == '') {
-            $path = 'index';
+        if ($path == "") {
+            $path = "index";
         }
 
         foreach($this->files() as $file) {

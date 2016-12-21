@@ -1,4 +1,5 @@
 <?php
+
 namespace Soushi\File;
 
 class Page implements \Soushi\File

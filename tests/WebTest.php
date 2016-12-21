@@ -7,8 +7,8 @@ class WebTest extends TestCase
     function testWeb()
     {
         $config = new Soushi\Config([
-            "template_dir" => dirname(__FILE__).'/assets/templates',
-            "source_dir"   => dirname(__FILE__).'/assets/source',
+            "template_dir" => dirname(__FILE__) . "/assets/templates",
+            "source_dir"   => dirname(__FILE__) . "/assets/source",
         ]);
         $web = new Soushi\Web($config);
         $this->assertInstanceOf(Soushi\Web::class, $web);
@@ -17,8 +17,8 @@ class WebTest extends TestCase
     function testDispatch()
     {
         $config = new Soushi\Config([
-            "template_dir" => dirname(__FILE__).'/assets/templates',
-            "source_dir"   => dirname(__FILE__).'/assets/source',
+            "template_dir" => dirname(__FILE__) . "/assets/templates",
+            "source_dir"   => dirname(__FILE__) . "/assets/source",
         ]);
         $web = new Soushi\Web($config);
         $html = $web->dispatch("/subdir/foo");
@@ -29,8 +29,8 @@ class WebTest extends TestCase
     function testNormalizePath()
     {
         $config = new Soushi\Config([
-            "template_dir" => dirname(__FILE__).'/assets/templates',
-            "source_dir"   => dirname(__FILE__).'/assets/source',
+            "template_dir" => dirname(__FILE__) . "/assets/templates",
+            "source_dir"   => dirname(__FILE__) . "/assets/source",
         ]);
         $web = new Soushi\Web($config);
 
@@ -50,8 +50,8 @@ class WebTest extends TestCase
     function testHandle404()
     {
         $config = new Soushi\Config([
-            "template_dir" => dirname(__FILE__).'/assets/templates',
-            "source_dir"   => dirname(__FILE__).'/assets/source',
+            "template_dir" => dirname(__FILE__) . "/assets/templates",
+            "source_dir"   => dirname(__FILE__) . "/assets/source",
         ]);
         $web = new Soushi\Web($config);
         $html = $web->dispatch("/no/such/path");
