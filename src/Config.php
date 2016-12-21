@@ -5,7 +5,7 @@ namespace Soushi;
 class Config
 {
     public $templateDir;
-    public $entryDir;
+    public $sourceDir;
 
     static function loadFile(string $filename)
     {
@@ -23,8 +23,8 @@ class Config
         $this->templateDir = $config["template_dir"] ??
                              dirname(__FILE__)."/../templates/builtins";
 
-        if (is_null($this->templateDir = $config["entry_dir"])) {
-            throw new InvalidArgumentException("`entry_dir` is required");
+        if (is_null($this->sourceDir = $config["source_dir"])) {
+            throw new InvalidArgumentException("`source_dir` is required");
         }
     }
 }

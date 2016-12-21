@@ -13,7 +13,7 @@ class Asset implements \Soushi\File
         $this->file = $file;
     }
 
-    function isEntry(): bool
+    function isPage(): bool
     {
         return false;
     }

@@ -8,7 +8,7 @@ class ConfigTest extends TestCase
     {
         $config = new Soushi\Config([
             "template_dir" => "/path/to/templates",
-            "entry_dir"    => "/path/to/entries",
+            "source_dir"   => "/path/to/source",
         ]);
         $this->assertInstanceOf(Soushi\Config::class, $config);
     }

@@ -1,7 +1,7 @@
 <?php
 namespace Soushi\File;
 
-class Entry implements \Soushi\File
+class Page implements \Soushi\File
 {
     use Base;
 
@@ -13,7 +13,7 @@ class Entry implements \Soushi\File
         $this->file = $file;
     }
 
-    function isEntry(): bool
+    function isPage(): bool
     {
         return true;
     }

@@ -3,6 +3,6 @@ namespace Soushi;
 
 interface File
 {
-    function isEntry(): bool;
+    function isPage(): bool;
     function path(): string;
 }

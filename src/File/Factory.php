@@ -8,7 +8,7 @@ class Factory
     static function create(\SplFileInfo $file): \Soushi\File
     {
         if (preg_match('/\.md$/', $file->getPathname())) {
-            return new Entry($file);
+            return new Page($file);
         } else {
             return new Asset($file);
         }
