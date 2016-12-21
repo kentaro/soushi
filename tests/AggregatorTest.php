@@ -23,4 +23,13 @@ class AggregatorTest extends TestCase
         $file = $aggregator->fetch('subdir/foo');
         $this->assertEquals($file->path(), 'subdir/foo');
     }
+
+    /**
+     * @expectedException \Soushi\Exception\PageNotFound
+     */
+    function testFetchFailure()
+    {
+        $aggregator = new Soushi\Aggregator(dirname(__FILE__).'/assets');
+        $file = $aggregator->fetch('no such page');
+    }
 }

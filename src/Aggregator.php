@@ -5,13 +5,13 @@ namespace Soushi;
 
 class Aggregator
 {
-    private $dirname;
+    private $sourceDir;
     private $finder;
     private $files;
 
-    function __construct(string $dirname)
+    function __construct(string $sourceDir)
     {
-        $this->dirname = $dirname;
+        $this->sourceDir = $sourceDir;
     }
 
     function files(): array
@@ -33,17 +33,19 @@ class Aggregator
         }
 
         foreach($this->files() as $file) {
-            if ($file->path() == $path) {
+            if ($file->isPage() && ($file->path() == $path)) {
                 return $file;
             }
         }
+
+        throw new \Soushi\Exception\PageNotFound("page not found");
     }
 
     private function iterator(): \Symfony\Component\Finder\Finder
     {
         if (is_null($this->finder)) {
             $this->finder = new \Symfony\Component\Finder\Finder();
-            $this->finder->files()->in($this->dirname);
+            $this->finder->files()->in($this->sourceDir);
         }
 
         return $this->finder;
