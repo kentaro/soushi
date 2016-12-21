@@ -15,7 +15,7 @@ class Parser
         return self::$instance;
     }
 
-    function __construct()
+    private function __construct()
     {
         $this->parser = new \Mni\FrontYAML\Parser();
     }

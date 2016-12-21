@@ -16,7 +16,7 @@ class Web
     function dispatch(string $path): string
     {
         try {
-            $page = $this->aggregator->fetch(preg_replace('/^\//', '', $path));
+            $page = $this->aggregator->fetch($this->normalizePath($path));
         } catch (Exception\PageNotFound $e) {
             return $this->handle404($e);
         } catch (Throwable $e) {
@@ -36,6 +36,11 @@ class Web
         }
 
         return $html;
+    }
+
+    function normalizePath(string $path): string
+    {
+        return preg_replace('/^\/(index\.php\/?)?/', '', $path);
     }
 
     private function handle404(Exception\PageNotFound $e)
