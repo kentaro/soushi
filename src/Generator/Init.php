@@ -23,6 +23,9 @@ class Init implements \Soushi\Generator
         $content = <<<'EOS'
 /vendor
 /build
+/public
+/tmp
+config.php
 EOS;
         if (!file_put_contents("{$this->dstDir}/.gitignore", $content)) {
             throw new \Soushi\Exception\File("failed to create .gitignore");
