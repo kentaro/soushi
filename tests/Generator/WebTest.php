@@ -25,7 +25,6 @@ class GeneratorWebTest extends TestCase
         $web = new Soushi\Generator\Web(self::$publicDir);
         $web->generate();
 
-        $this->assertFileExists(self::$tmpDir    . "/config.php");
         $this->assertFileExists(self::$publicDir . "/index.php");
     }
 }

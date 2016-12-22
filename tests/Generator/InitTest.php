@@ -28,5 +28,6 @@ class GeneratorInitTest extends TestCase
         $this->assertFileExists(self::$tmpDir . "/source");
         $this->assertFileExists(self::$tmpDir . "/templates");
         $this->assertFileExists(self::$tmpDir . "/build");
+        $this->assertFileExists(self::$tmpDir . "/config.php");
     }
 }

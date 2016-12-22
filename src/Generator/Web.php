@@ -13,21 +13,7 @@ class Web implements \Soushi\Generator
 
     function generate()
     {
-        $this->generateConfigPhp();
         $this->generateIndexPhp();
-    }
-
-    private function generateConfigPhp()
-    {
-        $content = <<<'EOS'
-return [
-    "template_dir" => dirname(__FILE__) . "/../templates",
-    "source_dir"   => dirname(__FILE__) . "/../source",
-];
-EOS;
-        if (!file_put_contents("{$this->dstDir}/../config.php", $content)) {
-            throw new \Soushi\Exception\File("failed to create config.php");
-        }
     }
 
     private function generateIndexPhp()
