@@ -8,13 +8,10 @@ trait Base
 
     private function prepareDirectory(string $dstDir)
     {
-        if (file_exists($dstDir)) {
-            throw new \Soushi\Exception\File("directory for contents to be generated already exists");
-        }
-        if (!is_writable(getcwd())) {
+        if (!is_writable(dirname($dstDir))) {
             throw new \Soushi\Exception\File("directory for contents to be generated not writable");
         }
-        if (!mkdir($dstDir, 0755)) {
+        if (!file_exists($dstDir) && !mkdir($dstDir, 0755)) {
             throw new \Soushi\Exception\File("directory for contents to be generated cannot be created");
         }
 

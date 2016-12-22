@@ -16,10 +16,11 @@ class GeneratorWebTest extends TestCase
 
     static function tearDownAfterClass()
     {
+        // too lazy to implement decent method...
         system("rm -rf " . self::$tmpDir);
     }
 
-    function testGeneratorWeb()
+    function testGenerate()
     {
         $web = new Soushi\Generator\Web(self::$publicDir);
         $web->generate();
