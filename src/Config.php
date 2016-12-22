@@ -9,7 +9,7 @@ class Config
 
     static function loadFile(string $filename)
     {
-        $config = require_once($filename);
+        $config = require $filename;
         return new Config($config);
     }
 
