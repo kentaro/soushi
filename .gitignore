@@ -1,2 +1,5 @@
 /vendor
 /build
+/public
+/tmp
+config.php
