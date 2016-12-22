@@ -6,7 +6,7 @@ class Web implements \Soushi\Generator
 {
     use Base;
 
-    function __construct(string $dstDir = "public")
+    function __construct(string $dstDir)
     {
         $this->prepareDirectory($dstDir);
     }
@@ -23,7 +23,7 @@ class Web implements \Soushi\Generator
 
 require_once dirname(__FILE__) . "/../vendor/autoload.php";
 
-$config = new Soushi\Config::loadFile(dirname(__FILE__) . "/../config.php");
+$config = Soushi\Config::loadFile(dirname(__FILE__) . "/../config.php");
 $web    = new Soushi\Web($config);
 echo $web->dispatch($_SERVER["REQUEST_URI"]);
 EOS;

@@ -6,7 +6,7 @@ class Init implements \Soushi\Generator
 {
     use Base;
 
-    function __construct(string $dstDir = ".")
+    function __construct(string $dstDir)
     {
         $this->prepareDirectory($dstDir);
     }
@@ -33,7 +33,8 @@ EOS;
     {
         $dirs = ["public", "source", "templates", "build"];
         foreach ($dirs as $dir) {
-            if (!mkdir($this->dstDir . "/{$dir}", 0755)) {
+            $path = $this->dstDir . "/{$dir}";
+            if (!file_exists($path) && !mkdir($path, 0755)) {
                 throw new \Soushi\Exception\File("failed to create {$dir}");
             }
         }

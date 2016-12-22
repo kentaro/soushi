@@ -1,4 +1,5 @@
 #!/usr/bin/env php
 <?php
-require_onece 'vendor/autoload.php';
-(new Soushi\CLI($argv))->run();
+
+require_once 'vendor/autoload.php';
+(new Soushi\Cli())->run($argv);
