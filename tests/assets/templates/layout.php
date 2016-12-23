@@ -1,2 +1,2 @@
 <title><?= $this->e($title) ?></title>
-<?= $this->section('content') ?>
+<?= $this->section("content") ?>

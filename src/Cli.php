@@ -18,9 +18,6 @@ class Cli
             case 'init':
                 $this->init($args);
                 break;
-            case 'build_web':
-                $this->build_web($args);
-                break;
             case 'server':
                 $this->server($args);
                 break;
@@ -39,12 +36,6 @@ class Cli
     private function init(array $args)
     {
         $generator = new \Soushi\Generator\Init($args[0] ?? ".");
-        $generator->generate();
-    }
-
-    private function build_web(array $args)
-    {
-        $generator = new \Soushi\Generator\Web($args[0] ?? "public");
         $generator->generate();
     }
 

@@ -1,6 +1,5 @@
 /vendor
 composer.lock
-
 /build
 /public
 /tmp

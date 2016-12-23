@@ -1,5 +1,5 @@
 <?php
-$this->layout('layout', ['title' => $title])
+$this->layout("layout", ["title" => $title])
 ?>
 
 <h1><?= $title ?></h1>

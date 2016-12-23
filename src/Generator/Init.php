@@ -23,6 +23,8 @@ class Init implements \Soushi\Generator
     {
         $content = <<<'EOS'
 /vendor
+composer.lock
+
 /build
 /public
 /tmp
@@ -49,8 +51,8 @@ EOS;
         $content = <<<'EOS'
 <?php
 return [
-    "template_dir" => dirname(__FILE__) . "/../templates",
-    "source_dir"   => dirname(__FILE__) . "/../source",
+    "template_dir" => dirname(__FILE__) . "/templates",
+    "source_dir"   => dirname(__FILE__) . "/source",
 ];
 EOS;
         $path = "{$this->dstDir}/config.php";
