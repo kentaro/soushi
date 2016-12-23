@@ -16,6 +16,7 @@ class Init implements \Soushi\Generator
         $this->generateGitIgnore();
         $this->generateDirectories();
         $this->generateConfigPhp();
+        $this->generateIndexPhp();
     }
 
     private function generateGitIgnore()
@@ -54,6 +55,22 @@ return [
 EOS;
         if (!file_put_contents("{$this->dstDir}/config.php", $content)) {
             throw new \Soushi\Exception\File("failed to create config.php");
+        }
+    }
+
+    private function generateIndexPhp()
+    {
+        $content = <<<'EOS'
+<?php
+
+require_once dirname(__FILE__) . "/../vendor/autoload.php";
+
+$config = Soushi\Config::loadFile(dirname(__FILE__) . "/../config.php");
+$web    = new Soushi\Web($config);
+echo $web->dispatch($_SERVER["REQUEST_URI"]);
+EOS;
+        if (!file_put_contents("{$this->dstDir}/public/index.php", $content)) {
+            throw new \Soushi\Exception\File("failed to create index.php");
         }
     }
 }
