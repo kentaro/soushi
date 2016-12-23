@@ -53,7 +53,11 @@ return [
     "source_dir"   => dirname(__FILE__) . "/../source",
 ];
 EOS;
-        if (!file_put_contents("{$this->dstDir}/config.php", $content)) {
+        $path = "{$this->dstDir}/config.php";
+        if (
+            !file_exists($path) &&
+            !file_put_contents($path, $content)
+        ) {
             throw new \Soushi\Exception\File("failed to create config.php");
         }
     }
@@ -69,7 +73,11 @@ $config = Soushi\Config::loadFile(dirname(__FILE__) . "/../config.php");
 $web    = new Soushi\Web($config);
 echo $web->dispatch($_SERVER["REQUEST_URI"]);
 EOS;
-        if (!file_put_contents("{$this->dstDir}/public/index.php", $content)) {
+        $path = "{$this->dstDir}/public/index.php";
+        if (
+            !file_exists($path) &&
+            !file_put_contents($path, $content)
+        ) {
             throw new \Soushi\Exception\File("failed to create index.php");
         }
     }
