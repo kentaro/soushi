@@ -9,6 +9,8 @@ class Aggregator
     private $sourceDir;
     private $finder;
     private $files;
+    private $pages;
+    private $assets;
 
     function __construct(string $sourceDir)
     {
@@ -25,6 +27,28 @@ class Aggregator
         }
 
         return $this->files;
+    }
+
+    function pages(): array
+    {
+        if (is_null($this->pages)) {
+            $this->pages = array_filter($this->files(), function ($e) {
+                return $e->isPage();
+            });
+        }
+
+        return $this->pages;
+    }
+
+    function assets(): array
+    {
+        if (is_null($this->assets)) {
+            $this->assets = array_filter($this->files(), function ($e) {
+                return !$e->isPage();
+            });
+        }
+
+        return $this->assets;
     }
 
     function fetch(string $path): File

@@ -14,7 +14,21 @@ class AggregatorTest extends TestCase
     {
         $aggregator = new Soushi\Aggregator(dirname(__FILE__) . "/assets/source");
         $files = $aggregator->files();
+        $this->assertEquals(count($files), 5);
+    }
+
+    function testPages()
+    {
+        $aggregator = new Soushi\Aggregator(dirname(__FILE__) . "/assets/source");
+        $files = $aggregator->pages();
         $this->assertEquals(count($files), 3);
+    }
+
+    function testAssets()
+    {
+        $aggregator = new Soushi\Aggregator(dirname(__FILE__) . "/assets/source");
+        $files = $aggregator->assets();
+        $this->assertEquals(count($files), 2);
     }
 
     function testFetch()
