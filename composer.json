@@ -21,5 +21,8 @@
         "psr-4": {
             "Soushi\\" : "src/"
         }
-    }
+    },
+    "bin": [
+        "bin/soushi"
+    ]
 }
