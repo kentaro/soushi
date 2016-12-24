@@ -21,6 +21,9 @@ class Cli
             case 'server':
                 $this->server($args);
                 break;
+            case 'build':
+                $this->build($args);
+                break;
             default:
                 $this->usage($argv[0]);
                 break;
@@ -45,5 +48,11 @@ class Cli
         $docroot  = $args[1] ?? "public";
 
         pcntl_exec("/usr/bin/env", ["php", "-S", $hostport, "-t", $docroot]);
+    }
+
+    private function build(array $args)
+    {
+        $generator = new \Soushi\Generator\Build($args[0] ?? "build");
+        $generator->generate();
     }
 }
