@@ -38,8 +38,8 @@ class Cli
 
     private function init(array $args)
     {
-        $generator = new \Soushi\Generator\Init($args[0] ?? ".");
-        $generator->generate();
+        $command = new \Soushi\Command\Init($args[0] ?? ".");
+        $command->execute();
     }
 
     private function server(array $args)
@@ -52,7 +52,7 @@ class Cli
 
     private function build(array $args)
     {
-        $generator = new \Soushi\Generator\Build($args[0] ?? "build");
-        $generator->generate();
+        $command = new \Soushi\Command\Build($args[0] ?? "build");
+        $command->execute();
     }
 }

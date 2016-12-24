@@ -1,6 +1,6 @@
 <?php
 
-namespace Soushi\Generator;
+namespace Soushi\Command;
 
 trait Base
 {

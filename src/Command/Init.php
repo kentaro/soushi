@@ -1,8 +1,8 @@
 <?php
 
-namespace Soushi\Generator;
+namespace Soushi\Command;
 
-class Init implements \Soushi\Generator
+class Init implements \Soushi\Command
 {
     use Base;
 
@@ -11,7 +11,7 @@ class Init implements \Soushi\Generator
         $this->prepareDirectory($dstDir);
     }
 
-    function generate()
+    function execute()
     {
         $this->generateGitIgnore();
         $this->generateDirectories();

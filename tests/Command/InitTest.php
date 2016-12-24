@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class GeneratorInitTest extends TestCase
+class InitTest extends TestCase
 {
     static $tmpDir;
 
@@ -20,8 +20,8 @@ class GeneratorInitTest extends TestCase
 
     function testGenerate()
     {
-        $init = new Soushi\Generator\Init(self::$tmpDir);
-        $init->generate();
+        $init = new Soushi\Command\Init(self::$tmpDir);
+        $init->execute();
 
         $this->assertFileExists(self::$tmpDir . "/.gitignore");
         $this->assertFileExists(self::$tmpDir . "/public");

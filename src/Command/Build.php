@@ -1,8 +1,8 @@
 <?php
 
-namespace Soushi\Generator;
+namespace Soushi\Command;
 
-class Build implements \Soushi\Generator
+class Build implements \Soushi\Command
 {
     use Base;
 
@@ -18,7 +18,7 @@ class Build implements \Soushi\Generator
         $this->aggregator = new \Soushi\Aggregator($config->sourceDir);
     }
 
-    function generate()
+    function execute()
     {
         $this->generatePages();
         $this->generateAssets();

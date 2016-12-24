@@ -2,7 +2,7 @@
 
 use PHPUnit\Framework\TestCase;
 
-class GeneratorBuilderTest extends TestCase
+class BuildTest extends TestCase
 {
     static $cwd;
     static $tmpDir;
@@ -10,7 +10,7 @@ class GeneratorBuilderTest extends TestCase
 
     static function setUpBeforeClass()
     {
-        self::$cwd      = getcwd(); 
+        self::$cwd      = getcwd();
         self::$tmpDir   = dirname(__FILE__) . "/../../tmp";
         self::$buildDir = self::$tmpDir . "/build";
         mkdir(self::$tmpDir);
@@ -26,8 +26,8 @@ class GeneratorBuilderTest extends TestCase
 
     function testGenerate()
     {
-        $init = new Soushi\Generator\Build(self::$buildDir);
-        $init->generate();
+        $init = new Soushi\Command\Build(self::$buildDir);
+        $init->execute();
 
         $this->assertFileExists(self::$buildDir . "/index.html");
         $this->assertFileExists(self::$buildDir . "/subdir/foo.html");
