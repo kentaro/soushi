@@ -24,7 +24,7 @@ class BuildTest extends TestCase
         chdir(self::$cwd);
     }
 
-    function testGenerate()
+    function testExecute()
     {
         $init = new Soushi\Command\Build(self::$buildDir);
         $init->execute();

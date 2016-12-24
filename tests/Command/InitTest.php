@@ -18,7 +18,7 @@ class InitTest extends TestCase
         system("rm -rf " . self::$tmpDir);
     }
 
-    function testGenerate()
+    function testExecute()
     {
         $init = new Soushi\Command\Init(self::$tmpDir);
         $init->execute();

@@ -24,6 +24,9 @@ class Cli
             case 'build':
                 $this->build($args);
                 break;
+            case 'gh-pages':
+                $this->ghPages($args);
+                break;
             default:
                 $this->usage($argv[0]);
                 break;
@@ -53,6 +56,12 @@ class Cli
     private function build(array $args)
     {
         $command = new \Soushi\Command\Build($args[0] ?? "build");
+        $command->execute();
+    }
+
+    private function ghPages(array $args)
+    {
+        $command = new \Soushi\Command\Ghpages($args[0] ?? "build");
         $command->execute();
     }
 }
