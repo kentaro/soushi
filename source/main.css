@@ -1,16 +1,21 @@
 @import url('//fonts.googleapis.com/css?family=Varela+Round');
 @import url('//fonts.googleapis.com/css?family=Inconsolata');
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   font-family: 'Varela Round', sans-serif;
   background-color: #fff;
-  margin: 0;
-  padding: 0;
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  min-height: 100vh;
 }
 
 .header {
@@ -29,6 +34,7 @@ body {
 .body {
   display: flex;
   flex-direction: row;
+  min-height: 100vh;
 }
 
 .sidebar {
