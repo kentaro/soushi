@@ -1,3 +1,101 @@
+@import url('//fonts.googleapis.com/css?family=Varela+Round');
+@import url('//fonts.googleapis.com/css?family=Inconsolata');
+
 body {
+  font-family: 'Varela Round', sans-serif;
   background-color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  color: #fff;
+  border-bottom: 1px solid #333;
+  background-color: #006699;
+  padding: 0 3em;
+}
+
+.header a:link,
+.header a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+}
+
+.sidebar {
+  color: #fff;
+  border-right: 1px solid #333;
+  background-color: #0099CC;
+  flex-direction: column;
+  padding: 1em;
+  width: 15%;
+}
+
+.sidebar ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.sidebar a:link,
+.sidebar a:visited {
+  color: #f0f0f0;
+}
+
+.main {
+  padding: 0 3em;
+  flex: 1;
+}
+
+.main h2,
+.main h3,
+.main h4,
+.main h5,
+.main h6 {
+  color: #003366;
+  font-weight: bold;
+}
+
+.main a:link {
+  color: #0099CC;
+}
+
+.main a:visited {
+  color: #006699;
+}
+
+.footer {
+  color: #fff;
+  background: #333;
+  text-align: center;
+  padding: 1em;
+  border-top: 1px solid #333;
+}
+
+.footer a:link,
+.footer a:visited {
+  color: #f0f0f0;
+}
+
+pre {
+  line-height: 1.4em;
+  font-family: 'Inconsolata', monospace;
+  border-radius: 10px;
+  background-color: #f0f0f0;
+  padding: 1em;
+}
+
+code {
+  font-family: 'Inconsolata', monospace;
+  background-color: #f0f0f0;
+  padding: 0.2em;
 }
