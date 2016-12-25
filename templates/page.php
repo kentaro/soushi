@@ -10,7 +10,7 @@
   <body>
     <div class="container">
       <div class="header">
-        <h1><a href="/"><?= $config->site_title() ?></a></h1>
+        <h1><a href="./"><?= $config->site_title() ?></a></h1>
       </div>
       <div class="body">
         <aside class="sidebar">
