@@ -4,6 +4,7 @@ namespace Soushi;
 
 class Config
 {
+    public $siteTitle;
     public $templateDir;
     public $sourceDir;
 
@@ -20,6 +21,7 @@ class Config
 
     private function build(array $config)
     {
+        $this->siteTitle   = $config["site_title"];
         $this->templateDir = $config["template_dir"] ??
                              dirname(__FILE__) . "/../templates/builtins";
 

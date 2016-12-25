@@ -4,11 +4,13 @@ namespace Soushi;
 
 class Web
 {
+    private $config;
     private $template;
     private $aggregator;
 
     function __construct(Config $config)
     {
+        $this->config     = $config;
         $this->template   = new Template($config->templateDir);
         $this->aggregator = new Aggregator($config->sourceDir);
     }
@@ -29,6 +31,7 @@ class Web
                 array_merge(
                     $page->metadata(),
                     [
+                        "config"  => $this->config,
                         "content" => $page->content(),
                     ]
                 )
