@@ -8,7 +8,7 @@ class InitTest extends TestCase
 
     static function setUpBeforeClass()
     {
-        self::$tmpDir = dirname(__FILE__) . "/../../tmp";
+        self::$tmpDir = dirname(__FILE__, 3) . "/tmp";
         mkdir(self::$tmpDir);
     }
 

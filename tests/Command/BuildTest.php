@@ -11,10 +11,10 @@ class BuildTest extends TestCase
     static function setUpBeforeClass()
     {
         self::$cwd      = getcwd();
-        self::$tmpDir   = dirname(__FILE__) . "/../../tmp";
+        self::$tmpDir   = dirname(__FILE__, 3) . "/tmp";
         self::$buildDir = self::$tmpDir . "/build";
         mkdir(self::$tmpDir);
-        chdir(dirname(__FILE__) . "/../assets");
+        chdir(dirname(__FILE__, 2) . "/assets");
     }
 
     static function tearDownAfterClass()
