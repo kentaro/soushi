@@ -9,6 +9,7 @@
         }
     ],
     "require": {
+        "php": ">=7.1",
         "league/plates": "^3.1",
         "nategood/commando": "^0.2.9",
         "mnapoli/front-yaml": "^1.5",
