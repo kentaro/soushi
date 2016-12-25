@@ -51,6 +51,7 @@ EOS;
         $content = <<<'EOS'
 <?php
 return [
+    "site_title"   => "My Homepage",
     "template_dir" => dirname(__FILE__) . "/templates",
     "source_dir"   => dirname(__FILE__) . "/source",
 ];
@@ -69,9 +70,9 @@ EOS;
         $content = <<<'EOS'
 <?php
 
-require_once dirname(__FILE__) . "/../vendor/autoload.php";
+require_once dirname(__FILE__, 2) . "/vendor/autoload.php";
 
-$config = Soushi\Config::loadFile(dirname(__FILE__) . "/../config.php");
+$config = Soushi\Config::loadFile(dirname(__FILE__, 2) . "/config.php");
 $web    = new Soushi\Web($config);
 echo $web->dispatch($_SERVER["REQUEST_URI"]);
 EOS;

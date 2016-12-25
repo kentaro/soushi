@@ -11,8 +11,8 @@ class Web
     function __construct(Config $config)
     {
         $this->config     = $config;
-        $this->template   = new Template($config->templateDir);
-        $this->aggregator = new Aggregator($config->sourceDir);
+        $this->template   = new Template($config->template_dir());
+        $this->aggregator = new Aggregator($config->source_dir());
     }
 
     function dispatch(string $path): string

@@ -4,9 +4,7 @@ namespace Soushi;
 
 class Config
 {
-    public $siteTitle;
-    public $templateDir;
-    public $sourceDir;
+    private $config;
 
     static function loadFile(string $filename)
     {
@@ -19,14 +17,18 @@ class Config
         $this->build($config);
     }
 
+    function __call($name, $args = [])
+    {
+        return $this->config[$name];
+    }
+
     private function build(array $config)
     {
-        $this->siteTitle   = $config["site_title"];
-        $this->templateDir = $config["template_dir"] ??
-                             dirname(__FILE__) . "/../templates/builtins";
+        $config["template_dir"] = $config["template_dir"] ??
+                                  dirname(__FILE__, 2) . "/templates";
+        $config["source_dir"]   = $config["source_dir"] ??
+                                  dirname(__FILE__, 2) . "/source";
 
-        if (is_null($this->sourceDir = $config["source_dir"])) {
-            throw new InvalidArgumentException("`source_dir` is required");
-        }
+        $this->config = $config;
     }
 }

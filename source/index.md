@@ -78,12 +78,12 @@ By default, templates are supposed to be in `templates/` directory. Templates ar
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="main.css">
-    <title><?= $config->siteTitle ?></title>
+    <title><?= $config->site_title() ?></title>
   </head>
   <body>
     <div class="container">
       <div class="header">
-        <h1><?= $config->siteTitle ?></h1>
+        <h1><?= $config->site_title() ?></h1>
       </div>
       <div class="body">
         <h2><?= $title ?></h2>

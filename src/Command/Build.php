@@ -14,8 +14,8 @@ class Build implements \Soushi\Command
         $this->prepareDirectory($dstDir);
 
         $config = \Soushi\Config::loadFile("config.php");
-        $this->template   = new \Soushi\Template($config->templateDir);
-        $this->aggregator = new \Soushi\Aggregator($config->sourceDir);
+        $this->template   = new \Soushi\Template($config->template_dir());
+        $this->aggregator = new \Soushi\Aggregator($config->source_dir());
     }
 
     function execute()
