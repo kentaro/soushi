@@ -23,7 +23,7 @@
             </ul>
           </div>
           <div class="sidebar-section">
-            <h2>Cutomization</h2>
+            <h2>Customization</h2>
             <ul>
               <li><a href="./config">Configuration</a></li>
               <li><a href="./variables">Variables</a></li>
