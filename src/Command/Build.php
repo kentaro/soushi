@@ -6,6 +6,7 @@ class Build implements \Soushi\Command
 {
     use Base;
 
+    private $config;
     private $template;
     private $aggregator;
 
@@ -13,9 +14,9 @@ class Build implements \Soushi\Command
     {
         $this->prepareDirectory($dstDir);
 
-        $config = \Soushi\Config::loadFile("config.php");
-        $this->template   = new \Soushi\Template($config->template_dir());
-        $this->aggregator = new \Soushi\Aggregator($config->source_dir());
+        $this->config     = \Soushi\Config::loadFile("config.php");
+        $this->template   = new \Soushi\Template($this->config->template_dir());
+        $this->aggregator = new \Soushi\Aggregator($this->config->source_dir());
     }
 
     function execute()
@@ -33,6 +34,7 @@ class Build implements \Soushi\Command
                 array_merge(
                     $page->metadata(),
                     [
+                        "config"  => $this->config,
                         "content" => $page->content(),
                     ]
                 )

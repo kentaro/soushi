@@ -43,7 +43,7 @@ By default, templates are supposed to be placed in `templates/` directory. Templ
 </html>
 ```
 
-For details, see [Variables](/variables) and [Template](/template) sections of this site.
+For details, see [Variables](./variables) and [Template](./template) sections of this site.
 
 ### Assets
 

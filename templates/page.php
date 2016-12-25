@@ -17,17 +17,17 @@
           <div class="sidebar-section">
             <h2>Getting Started</h2>
             <ul>
-              <li><a href="/">Introduction</a></li>
-              <li><a href="/first">Your First Page</a></li>
-              <li><a href="/deployment">Deployment</a></li>
+              <li><a href="./">Introduction</a></li>
+              <li><a href="./first">Your First Page</a></li>
+              <li><a href="./deployment">Deployment</a></li>
             </ul>
           </div>
           <div class="sidebar-section">
             <h2>Cutomization</h2>
             <ul>
-              <li><a href="/config">Configuration</a></li>
-              <li><a href="/variables">Variables</a></li>
-              <li><a href="/template">Template</a></li>
+              <li><a href="./config">Configuration</a></li>
+              <li><a href="./variables">Variables</a></li>
+              <li><a href="./template">Template</a></li>
             </ul>
           </div>
         </aside>
