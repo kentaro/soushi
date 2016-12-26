@@ -49,7 +49,8 @@ As a result, you can see some files and directories tree like below:
 config.php
 build/
 public/
-    └── index.php
+    └─ .htaccess
+    └─ index.php
 source/
 templates/
 ```
