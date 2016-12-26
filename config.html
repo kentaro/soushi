@@ -44,7 +44,7 @@ return [
     "template_dir" =&gt; dirname(__FILE__) . "/templates",
     "source_dir"   =&gt; dirname(__FILE__) . "/source",
 ];</code></pre>
-<p>As you see above, it's just a PHP associative-array. You have to notice that the value is <code>return</code>ed. Otherwise, the statement which load the file doesn't return the configuration.</p>
+<p>As you see above, it's just a PHP associative-array. You have to notice that the value is <code>return</code>ed. Otherwise, the statement which loads the file doesn't return the configuration value as an array.</p>
 <h3>In Templates</h3>
 <p>The configurations in <code>config.php</code> is passed into templates as <code>$config</code> variable to enable you to get information from it.</p>
 <pre><code class="language-php">&lt;title&gt;&lt;?= $config-&gt;site_title() ?&gt;&lt;/title&gt;</code></pre>
