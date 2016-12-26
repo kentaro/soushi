@@ -56,3 +56,4 @@ templates/
 ```
 
 Now you are ready to enjoy Soushi!
+
