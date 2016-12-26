@@ -17,6 +17,7 @@ class Init implements \Soushi\Command
         $this->generateDirectories();
         $this->generateConfigPhp();
         $this->generateIndexPhp();
+        $this->generateDotHtaccess();
     }
 
     private function generateGitIgnore()
@@ -81,6 +82,25 @@ EOS;
             !file_put_contents($path, $content)
         ) {
             throw new \Soushi\Exception\File("failed to create index.php");
+        }
+    }
+
+    private function generateDotHtaccess()
+    {
+        $content = <<<'EOS'
+RewriteEngine On
+RewriteBase   /
+RewriteRule   ^index\.php$ - [L]
+RewriteCond   %{REQUEST_FILENAME} !-f
+RewriteCond   %{REQUEST_FILENAME} !-d
+RewriteRule   . /index.php [L]
+EOS;
+        $path = "{$this->dstDir}/public/.htaccess";
+        if (
+            !file_exists($path) &&
+            !file_put_contents($path, $content)
+        ) {
+            throw new \Soushi\Exception\File("failed to create .htaccess");
         }
     }
 }
