@@ -1,11 +1,15 @@
 {
     "name": "kentaro/soushi",
-    "type": "project",
+    "type": "library",
+    "description": "Bimodal Site Generator Powered by PHP.",
+    "keywords": ["blog", "site", "generator"],
+    "homepage": "http://kentarok.org/soushi/",
     "license": "MIT",
     "authors": [
         {
             "name": "Kentaro Kuribayashi",
-            "email": "kentarok@gmail.com"
+            "email": "kentarok@gmail.com",
+            "homepage": "http://kentarok.org/"
         }
     ],
     "require": {
