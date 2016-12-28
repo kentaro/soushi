@@ -38,7 +38,7 @@ By default, templates are supposed to be placed in `templates/` directory. Templ
   <body>
     <h1><?= $config->site_title() ?></h1>
     <h2><?= $title ?></h2>
-    <?= $contents ?>
+    <?= $content ?>
   </body>
 </html>
 ```

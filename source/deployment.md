@@ -37,4 +37,15 @@ Needless to say, you need to create remote repository on GitHub and track it fro
 
 ### Dynamic Web Site
 
-Just put the whole directory in which your site is to a Web server via FTP or anything.
+Upload the whole directories (**NOT** just `public/` directory) in which your site is to a Web server via FTP or anything. If the document root of Web server is not set to `public/`, rename `public/` directory to appropriate one before deployment.
+
+For Apache httpd, Soushi generates .htaccess file in `public/` directory to handle requests routing to appropriate files.
+
+```
+RewriteEngine On
+RewriteBase   /
+RewriteRule   ^index\.php$ - [L]
+RewriteCond   %{REQUEST_FILENAME} !-f
+RewriteCond   %{REQUEST_FILENAME} !-d
+RewriteRule   . /index.php [L]
+```

@@ -22,7 +22,7 @@ return [
 ];
 ```
 
-As you see above, it's just a PHP associative-array. You have to notice that the value is `return`ed. Otherwise, the statement which load the file doesn't return the configuration.
+As you see above, it's just a PHP associative-array. You have to notice that the value is `return`ed. Otherwise, the statement which loads the file doesn't return the configuration value as an array.
 
 ### In Templates
 

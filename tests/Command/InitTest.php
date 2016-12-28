@@ -30,5 +30,6 @@ class InitTest extends TestCase
         $this->assertFileExists(self::$tmpDir . "/build");
         $this->assertFileExists(self::$tmpDir . "/config.php");
         $this->assertFileExists(self::$tmpDir . "/public/index.php");
+        $this->assertFileExists(self::$tmpDir . "/public/.htaccess");
     }
 }
