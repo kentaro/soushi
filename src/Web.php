@@ -32,6 +32,8 @@ class Web
                     $page->metadata(),
                     [
                         "config"  => $this->config,
+                        "pages"   => $this->aggregator->pages(),
+                        "page"    => $page,
                         "content" => $page->content(),
                     ]
                 )
