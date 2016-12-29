@@ -1,4 +1,4 @@
-# Soushi: Bimodal Site Generator Powered by PHP
+# Soushi: Bimodal Site Generator Powered by PHP [![Build Status](https://travis-ci.org/kentaro/soushi.svg?branch=add-ci)](https://travis-ci.org/kentaro/soushi)
 
 Soushi (草紙 in Japanese) is a bimodal site generator powered by PHP.
 
