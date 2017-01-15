@@ -28,7 +28,11 @@ class Build implements \Soushi\Command
     private function generatePages()
     {
         foreach ($this->aggregator->pages() as $page) {
-            $path = "{$this->dstDir}/{$page->path()}.html";
+            if ($page->isIndexPage()) {
+                $path = "{$this->dstDir}/{$page->path()}.html";
+            } else {
+                $path = "{$this->dstDir}/{$page->path()}/index.html";
+            }
             $html = $this->template->render(
                 $page->template(),
                 array_merge(

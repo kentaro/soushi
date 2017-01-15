@@ -16,6 +16,13 @@ class PageTest extends TestCase
         $this->assertTrue($page->isPage());
     }
 
+    function testIsIndexPage()
+    {
+        $aggregator = new \Soushi\Aggregator(dirname(__FILE__, 2) . "/assets/source");
+        $this->assertTrue($aggregator->fetch('index')->isIndexPage());
+        $this->assertFalse($aggregator->fetch('subdir/bar')->isIndexPage());
+    }
+
     function testMetadata()
     {
         $page = new Soushi\File\Page(new \SplFileInfo(dirname(__FILE__, 2) . "/assets/source/index.md"));

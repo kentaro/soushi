@@ -19,6 +19,11 @@ class Page implements \Soushi\File
         return true;
     }
 
+    function isIndexPage(): bool
+    {
+        return $this->path() === 'index' || preg_match('#\/index\z#', $this->path());
+    }
+
     function metadata(): array
     {
         return $this->document()->getYAML();
