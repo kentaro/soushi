@@ -30,8 +30,8 @@ class BuildTest extends TestCase
         $init->execute();
 
         $this->assertFileExists(self::$buildDir . "/index.html");
-        $this->assertFileExists(self::$buildDir . "/subdir/foo.html");
-        $this->assertFileExists(self::$buildDir . "/subdir/bar.html");
+        $this->assertFileExists(self::$buildDir . "/subdir/foo/index.html");
+        $this->assertFileExists(self::$buildDir . "/subdir/bar/index.html");
         $this->assertFileExists(self::$buildDir . "/css/main.css");
         $this->assertFileExists(self::$buildDir . "/js/main.js");
     }
