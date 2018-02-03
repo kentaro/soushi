@@ -1,5 +1,15 @@
 #!/usr/bin/env php
 <?php
+foreach (
+    [
+        dirname(__DIR__, 4) . '/vendor/autoload.php',
+        dirname(__DIR__) . '/vendor/autoload.php',
+    ] as $file
+) {
+    if (file_exists($file)) {
+        require_once $file;
+        break;
+    }
+}
 
-require_once 'vendor/autoload.php';
 (new Soushi\Cli())->run($argv);
